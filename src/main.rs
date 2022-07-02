@@ -20,8 +20,13 @@ fn main() {
 }
 
 fn gcd(a: u64, b: u64) -> u64 {
-    if b != 0 {
-        return gcd(b, a % b);
+    let mut a = a;
+    let mut b = b;
+
+    while b != 0 {
+        let t = b;
+        b = a % b;
+        a = t;
     }
 
     a
